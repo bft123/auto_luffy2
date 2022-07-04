@@ -3,7 +3,7 @@ djangorestframework==3.13.1 ##
 pandas==1.3.5 ##
 openpyxl==3.0.9
 pymysql
-xxxyyyy
+
 
 aiohttp==3.8.1
 aiosignal==1.2.0
