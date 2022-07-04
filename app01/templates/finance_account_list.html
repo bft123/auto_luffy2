@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+{% block content %}
+    <div class="luffy-container">
+        {% if request|has_permission:'finance_account_upload' %}
+            <div class="btn-group" style="margin: 5px 0">
+                <form action="/finance/account/upload/" method="post" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    {#                <a class="btn btn-default" href="#">#}
+                    {#                    <i class="fa fa-plus-square" aria-hidden="true"></i> 上传账务科目#}
+                    {#                </a>#}
+                    {#                <a class="btn btn-default" href="#">#}
+                    {#                    <i class="fa fa-plus-square" aria-hidden="true"></i> 上传SKU#}
+                    {#                </a>#}
+                    {#                <a class="btn btn-default" href="#">#}
+                    {#                    <i class="fa fa-plus-square" aria-hidden="true"></i> 上传源数据#}
+                    {#                </a>#}
+                    {% if request.session.info.username == 'bft' or request.session.info.username == 'lyq' %}
+                        <div>
+                            <span style="display: inline-block">上传财务科目</span>
+                            <input style="display: inline-block" type="file" name="fin_account">
+                            <span style="color: red">{{ fin_account_msg }}</span>
+                        </div>
+                        <div>
+                            <span style="display: inline-block">上传SKU</span>
+                            <input style="display: inline-block" type="file" name="fin_sku">
+                            <span style="color: red">{{ fin_sku_msg }}</span>
+                        </div>
+                    {% endif %}
+                    <div>
+                        <span style="display: inline-block">上传源数据</span>
+                        <input style="display: inline-block" type="file" name="fin_data">
+                        <span style="color: red">{{ fin_data_msg }}</span>
+                        <input class="btn-success" type="submit" value="提交">
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>文件名</th>
+                <th>是否验证</th>
+                <th>上传时间</th>
+                <th>上传人</th>
+                {% if request|has_permission:'finance_account_valid' or request|has_permission:'finance_account_del' %}
+                    <th>操作</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in query_set %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.filename }}</td>
+                    {% if item.is_alid %}
+                        <td style="color: red">{{ item.is_alid }}</td>
+                    {% else %}
+                        <td>{{ item.is_alid }}</td>
+                    {% endif %}
+                    <td>{{ item.upload_datetime|date:'Y-m-d H:i:s' }}</td>
+                    <td>{{ item.upload_person }}</td>
+                    {% if request|has_permission:'finance_account_valid' or request|has_permission:'finance_account_del' %}
+                        <td>
+                            {% if request|has_permission:'finance_account_valid' %}
+                                {#                                <a style="color: #333333;" href="/finance/account/valid/{{ item.id }}/">#}
+                                {#                                    <i class="fa fa-edit" aria-hidden="true"></i>#}
+                                {#                                </a>#}
+                                <a href="javascript:if(confirm('确实要检验 {{ item.filename }} 吗?')) location='/finance/account/valid/{{ item.id }}/'">
+                                    <i class="fa fa-edit" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+                            {% if request|has_permission:'finance_account_del' %}
+                                {#                        <a style="color: #d9534f;" href="/finance/account/del/{{ item.id }}/">#}
+                                {#                            <i class="fa fa-trash-o"></i>#}
+                                {#                        </a>#}
+                                <a href="javascript:if(confirm('确实要删除 {{ item.filename }} 吗?')) location='/finance/account/del/{{ item.id }}/'">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                            {% endif %}
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            {#            <tr>#}
+            {#                <td>2.xlsx</td>#}
+            {#                <td>否</td>#}
+            {#                <td>2022-02-21 09:10:10</td>#}
+            {#                <td>cloud</td>#}
+            {#            </tr>#}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

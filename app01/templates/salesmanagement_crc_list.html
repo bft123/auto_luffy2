@@ -1,0 +1,164 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+{% block content %}
+    <select id="sel01">
+      <option value ="0">请选择月份</option>
+    </select>
+
+    <div class="luffy-container">
+        {% if request|has_permission:'salesmanagement_crc_upload' %}
+            <div class="btn-group" style="margin: 5px 0">
+                <form action="/salesmanagement/crc/upload/" method="post" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    {#                <a class="btn btn-default" href="#">#}
+                    {#                    <i class="fa fa-plus-square" aria-hidden="true"></i> 上传账务科目#}
+                    {#                </a>#}
+                    {#                <a class="btn btn-default" href="#">#}
+                    {#                    <i class="fa fa-plus-square" aria-hidden="true"></i> 上传SKU#}
+                    {#                </a>#}
+                    {#                <a class="btn btn-default" href="#">#}
+                    {#                    <i class="fa fa-plus-square" aria-hidden="true"></i> 上传源数据#}
+                    {#                </a>#}
+                    {% if request.session.info.username == 'bft' or request.session.info.username == 'yvonney@hwccl' %}
+                        <div>
+                            <span style="display: inline-block">上传经销商信息</span>
+                            <input style="display: inline-block" type="file" name="sm_merchandise">
+                            <span style="color: red">{{ sm_merchandise_msg }}</span>
+                        </div>
+                        <div>
+                            <span style="display: inline-block">上传门店信息</span>
+                            <input style="display: inline-block" type="file" name="sm_shops">
+                            <span style="color: red">{{ sm_shops_msg }}</span>
+                        </div>
+                        <div>
+                            <span style="display: inline-block">上传人员信息</span>
+                            <input style="display: inline-block" type="file" name="sm_staff">
+                            <span style="color: red">{{ sm_staff_msg }}</span>
+                        </div>
+                        <div>
+                            <span style="display: inline-block">上传产品信息</span>
+                            <input style="display: inline-block" type="file" name="sm_product">
+                            <span style="color: red">{{ sm_product_msg }}</span>
+                        </div>
+                    {% endif %}
+                    <div>
+                        <span style="display: inline-block">上传CRC数据</span>
+                        <input style="display: inline-block" type="file" name="sm_crc_data">
+                        <span style="color: red">{{ sm_crc_data_msg }}</span>
+                        <input class="btn-success" type="submit" value="提交">
+                    </div>
+                    <input id="ip01" style="display: none" type="text" name="yearmonth" value="202201">
+                </form>
+            </div>
+        {% endif %}
+        {% if request|has_permission:'salesmanagement_crc_download' %}
+            <form action="/salesmanagement/crc/download/" method="post" novalidate>
+                <input id="ip02" style="display: none" type="text" name="yearmonth" value="202201">
+                {% csrf_token %}
+                <input class="btn-success" type="submit" value="汇总下载">
+            </form>
+        {% endif %}
+        <form action="/salesmanagement/crc/download_model/" method="post" novalidate>
+            {% csrf_token %}
+            <input class="btn-success" type="submit" value="模板下载">
+        </form>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>文件名</th>
+                <th>年月</th>
+{#                <th>是否验证</th>#}
+                <th>上传时间</th>
+                <th>上传人</th>
+                {% if request|has_permission:'salesmanagement_crc_del' %}
+                    <th>操作</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in query_set %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.filename }}</td>
+                    <td>{{ item.yearmonth }}</td>
+{#                    {% if item.is_alid %}#}
+{#                        <td style="color: red">{{ item.is_alid }}</td>#}
+{#                    {% else %}#}
+{#                        <td>{{ item.is_alid }}</td>#}
+{#                    {% endif %}#}
+                    <td>{{ item.upload_datetime|date:'Y-m-d H:i:s' }}</td>
+                    <td>{{ item.upload_person }}</td>
+{#                    {% if request|has_permission:'salesmanagement_crc_valid' or request|has_permission:'salesmanagement_crc_del' %}#}
+{#                        <td>#}
+{#                            {% if request|has_permission:'salesmanagement_crc_valid' %}#}
+{#                                <a href="javascript:if(confirm('确实要检验 {{ item.filename }} 吗?')) location='/salesmanagement/crc/valid/{{ item.id }}/'">#}
+{#                                    <i class="fa fa-edit" aria-hidden="true"></i>#}
+{#                                </a>#}
+{#                            {% endif %}#}
+                            {% if request|has_permission:'salesmanagement_crc_del' %}
+                                <td>
+                                    <a href="javascript:if(confirm('确实要删除 {{ item.filename }} 吗?')) location='/salesmanagement/crc/del/{{ item.id }}/'">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </td>
+                            {% endif %}
+{#                        </td>#}
+{#                    {% endif %}#}
+                </tr>
+            {% endfor %}
+            {#            <tr>#}
+            {#                <td>2.xlsx</td>#}
+            {#                <td>否</td>#}
+            {#                <td>2022-02-21 09:10:10</td>#}
+            {#                <td>cloud</td>#}
+            {#            </tr>#}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        function getFormatDate() {
+            var nums_list = [-3,-2,-1,0,1]
+            var month_list = []
+            $.each(nums_list,function (k,v){
+                {#console.log(v)#}
+                var date = new Date();
+                date.setMonth(date.getMonth()+v)
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                {#console.log(year + "" + month)#}
+                month_list.push(year + "" + month)
+            })
+            return month_list;
+        }
+        var month_list = getFormatDate();
+        var cur_month = month_list[3]
+
+        $(function(){
+            $('#ip01').val(cur_month)
+            $('#ip02').val(cur_month)
+
+            $.each(month_list,function(k,v){
+                {#console.log(k+':'+v);#}
+                if (v==cur_month){
+                    var $op = "<option value ='"+v+"' selected>"+v+"</option>";
+                }else{
+                    var $op = "<option value ='"+v+"'>"+v+"</option>";
+                }
+                $("#sel01").append($op);
+            })
+
+            $('#sel01').change(function (){
+                $('#ip01').val(this.value)
+                $('#ip02').val(this.value)
+            })
+        })
+    </script>
+{% endblock %}
+

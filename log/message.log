@@ -1,0 +1,54 @@
+日志级别：INFO,生成时间： 2022-07-04 10:05:03,258 ,模块：autoreload ,进程：13344,线程：16624 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-07-04 10:05:03,501 ,模块：utils ,进程：13344,线程：25788 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-07-04 10:06:36,588 ,模块：autoreload ,进程：13344,线程：16624 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagement.py changed, reloading.
+日志级别：INFO,生成时间： 2022-07-04 10:06:37,694 ,模块：autoreload ,进程：24508,线程：12576 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-07-04 10:06:37,769 ,模块：utils ,进程：24508,线程：12576 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-07-04 10:06:42,859 ,模块：salesmanagement ,进程：24508,线程：4088 , 消息：crc_list
+日志级别：INFO,生成时间： 2022-07-04 10:08:06,100 ,模块：autoreload ,进程：24508,线程：12576 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagement.py changed, reloading.
+日志级别：INFO,生成时间： 2022-07-04 10:08:07,174 ,模块：autoreload ,进程：27592,线程：15048 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-07-04 10:08:07,254 ,模块：utils ,进程：27592,线程：18084 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-07-04 10:08:13,196 ,模块：autoreload ,进程：27592,线程：15048 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagement.py changed, reloading.
+日志级别：INFO,生成时间： 2022-07-04 10:08:14,169 ,模块：autoreload ,进程：1572,线程：2668 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-07-04 10:08:14,244 ,模块：utils ,进程：1572,线程：20856 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-07-04 10:08:22,809 ,模块：salesmanagement ,进程：1572,线程：14360 , 消息：crc_list
+日志级别：INFO,生成时间： 2022-07-04 10:13:41,203 ,模块：autoreload ,进程：12296,线程：12916 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-07-04 10:13:41,279 ,模块：utils ,进程：12296,线程：12916 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-07-04 10:13:48,689 ,模块：rbac ,进程：12296,线程：9452 , 消息：bft 正在访问：/salesmanagement/crc/list/
+日志级别：INFO,生成时间： 2022-07-04 10:13:48,692 ,模块：salesmanagement ,进程：12296,线程：9452 , 消息：crc_list
+日志级别：INFO,生成时间： 2022-07-04 10:14:23,960 ,模块：rbac ,进程：12296,线程：9452 , 消息：bft 正在访问：/salesmanagement/crc/download/
+日志级别：INFO,生成时间： 2022-07-04 10:14:31,642 ,模块：rbac ,进程：12296,线程：5640 , 消息：bft 正在访问：/salesmanagement/crc/download_model/
+日志级别：INFO,生成时间： 2022-07-04 10:15:41,334 ,模块：autoreload ,进程：12296,线程：12916 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagement.py changed, reloading.
+日志级别：INFO,生成时间： 2022-07-04 10:15:42,346 ,模块：autoreload ,进程：28052,线程：3024 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-07-04 10:15:42,430 ,模块：utils ,进程：28052,线程：3024 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-07-04 10:16:30,277 ,模块：autoreload ,进程：28052,线程：3024 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagement.py changed, reloading.
+日志级别：INFO,生成时间： 2022-07-04 10:16:31,265 ,模块：autoreload ,进程：15312,线程：25336 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-07-04 10:16:31,347 ,模块：utils ,进程：15312,线程：25336 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-07-04 10:17:49,141 ,模块：autoreload ,进程：15312,线程：25336 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagement.py changed, reloading.
+日志级别：INFO,生成时间： 2022-07-04 10:17:50,175 ,模块：autoreload ,进程：26948,线程：27936 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-07-04 10:17:50,257 ,模块：utils ,进程：26948,线程：25024 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-07-04 10:20:24,680 ,模块：autoreload ,进程：26948,线程：27936 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagementAct.py changed, reloading.
+日志级别：INFO,生成时间： 2022-07-04 10:20:25,685 ,模块：autoreload ,进程：20100,线程：4868 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-07-04 10:20:25,867 ,模块：utils ,进程：20100,线程：4868 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-07-04 10:21:46,033 ,模块：autoreload ,进程：20100,线程：4868 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagement.py changed, reloading.
+日志级别：INFO,生成时间： 2022-07-04 10:21:47,031 ,模块：autoreload ,进程：22128,线程：5996 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-07-04 10:21:47,108 ,模块：utils ,进程：22128,线程：18588 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-07-04 10:22:14,132 ,模块：rbac ,进程：22128,线程：1440 , 消息：bft 正在访问：/salesmanagement/crc/list/
+日志级别：INFO,生成时间： 2022-07-04 10:22:14,134 ,模块：salesmanagement ,进程：22128,线程：1440 , 消息：==========>crc_list
+日志级别：INFO,生成时间： 2022-07-04 10:22:14,134 ,模块：salesmanagement ,进程：22128,线程：1440 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-07-04 10:22:15,126 ,模块：rbac ,进程：22128,线程：1440 , 消息：bft 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-07-04 10:22:15,126 ,模块：salesmanagementAct ,进程：22128,线程：1440 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-07-04 10:22:15,126 ,模块：salesmanagementAct ,进程：22128,线程：1440 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-07-04 10:22:16,260 ,模块：rbac ,进程：22128,线程：1440 , 消息：bft 正在访问：/salesmanagement/act/download/
+日志级别：INFO,生成时间： 2022-07-04 10:22:16,261 ,模块：salesmanagementAct ,进程：22128,线程：1440 , 消息：==========>act_download
+日志级别：INFO,生成时间： 2022-07-04 10:22:19,616 ,模块：rbac ,进程：22128,线程：16524 , 消息：bft 正在访问：/salesmanagement/act/download_model/
+日志级别：INFO,生成时间： 2022-07-04 10:22:19,617 ,模块：salesmanagementAct ,进程：22128,线程：16524 , 消息：==========>act_download_model
+日志级别：INFO,生成时间： 2022-07-04 10:22:22,683 ,模块：rbac ,进程：22128,线程：16532 , 消息：bft 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-07-04 10:22:22,684 ,模块：salesmanagementAct ,进程：22128,线程：16532 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-07-04 10:22:22,684 ,模块：salesmanagementAct ,进程：22128,线程：16532 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-07-04 10:22:23,545 ,模块：rbac ,进程：22128,线程：16532 , 消息：bft 正在访问：/salesmanagement/crc/list/
+日志级别：INFO,生成时间： 2022-07-04 10:22:23,545 ,模块：salesmanagement ,进程：22128,线程：16532 , 消息：==========>crc_list
+日志级别：INFO,生成时间： 2022-07-04 10:22:23,546 ,模块：salesmanagement ,进程：22128,线程：16532 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-07-04 10:22:24,519 ,模块：rbac ,进程：22128,线程：16532 , 消息：bft 正在访问：/salesmanagement/crc/download/
+日志级别：INFO,生成时间： 2022-07-04 10:22:24,520 ,模块：salesmanagement ,进程：22128,线程：16532 , 消息：==========>crc_download
+日志级别：INFO,生成时间： 2022-07-04 10:22:26,884 ,模块：rbac ,进程：22128,线程：21132 , 消息：bft 正在访问：/salesmanagement/crc/download_model/
+日志级别：INFO,生成时间： 2022-07-04 10:22:26,884 ,模块：salesmanagement ,进程：22128,线程：21132 , 消息：==========>crc_download_model
