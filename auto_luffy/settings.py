@@ -11,7 +11,7 @@ SECRET_KEY = '*y19rfiwf&d+s)pkclz^z8ty&ss3o77a53%6=%d&1ln%$7yz27'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # for online
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -117,6 +117,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+# 使用nginx做静态文件转发
 STATIC_URL = '/static/'
 # for online
 STATICFILES_DIRS = [

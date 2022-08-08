@@ -60,6 +60,7 @@ urlpatterns = [
     url(r'^salesmanagement/act/download/$', salesmanagementAct.act_download, name='salesmanagement_act_download'),
     url(r'^salesmanagement/act/download_model/$', salesmanagementAct.act_download_model, name='salesmanagement_act_download_model'),
     url(r'^salesmanagement/act/del/(?P<pk>\d+)/$', salesmanagementAct.act_del, name='salesmanagement_act_del'),
+    url(r'^salesmanagement/act/download_one/(?P<pk>\d+)/$', salesmanagementAct.act_download_one, name='salesmanagement_act_download_one'),
 
     # 用户
     url(r'^user/list/$', user.user_list, name='user_list'),

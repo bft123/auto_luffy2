@@ -29,7 +29,8 @@ class RbacMiddleware(MiddlewareMixin):
         3. 权限信息匹配
         """
         current_url = request.path_info
-        logger.info(request.session['info']['username'] + " 正在访问：" + current_url)
+        if request.session.get('info'):
+            logger.info(request.session['info']['username'] + " 正在访问：" + current_url)
         for valid_url in settings.VALID_URL_LIST:
             if re.match(valid_url, current_url):
                 # 白名单中的URL无需权限验证即可访问

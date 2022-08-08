@@ -77,8 +77,12 @@
                     <td>{{ item.upload_person }}</td>
                     {% if request|has_permission:'salesmanagement_act_del' %}
                         <td>
-                            <a href="javascript:if(confirm('确实要删除 {{ item.filename }} 吗?')) location='/salesmanagement/act/del/{{ item.id }}/'">
+                            <a title="删除" href="javascript:if(confirm('确实要删除 {{ item.filename }} 吗?')) location='/salesmanagement/act/del/{{ item.id }}/'">
                                 <i class="fa fa-trash-o"></i>
+                            </a>
+                            &nbsp;
+                            <a title="下载" href="javascript:if(confirm('确实要下载 {{ item.filename }} 吗?')) location='/salesmanagement/act/download_one/{{ item.id }}/'">
+                                <i class="fa fa-download"></i>
                             </a>
                         </td>
                     {% endif %}

@@ -150,7 +150,7 @@ def act_upload(req):
 
             filepath = f'media/sm_act/data/{input_filename}'
             input_sheet = datas_out[2]
-            input_sheet.drop(['门店信息_x', '门店信息', '产品信息_x', '档期是否异常'], axis=1, inplace=True)
+            input_sheet.drop(['陈列门店数', '门店信息_x', '门店信息', '产品信息_x', '档期是否异常'], axis=1, inplace=True)
             input_sheet.to_excel(filepath, index=False)
 
             content_type = mimetypes.guess_type(filepath)[0]
@@ -208,12 +208,16 @@ def act_download_model(req):
     base = r'media/sm_act/model'
     combine_filename = 'TP促销月度规划明细_模板.xlsx'
     combine_filepath = os.path.join(base, combine_filename)
+    return general_download(combine_filepath, combine_filename)
 
-    content_type = mimetypes.guess_type(combine_filepath)[0]
-    response = FileResponse(open(combine_filepath, mode='rb'), content_type=content_type)
+
+def general_download(filepath, filename):
+    logger.info("==========>" + sys._getframe().f_code.co_name)
+    content_type = mimetypes.guess_type(filepath)[0]
+    response = FileResponse(open(filepath, mode='rb'), content_type=content_type)
     response["Content-Type"] = "application/octet-stream"
     response["Content-Disposition"] = "attachment;filename*=UTF-8''{}".format(
-        escape_uri_path(combine_filename)
+        escape_uri_path(filename)
     )
     return response
 
@@ -229,6 +233,13 @@ def act_del(req, pk):
     smModels.delete()
     return redirect('/salesmanagement/act/list/')
 
+def act_download_one(req, pk):
+    logger.info("==========>" + sys._getframe().f_code.co_name)
+    ''' 删除上传文件 '''
+    smModels = models.SalesManagementACT.objects.filter(id=pk)
+    path = smModels.first().filepath
+    filename = path.split('/')[-1]
+    return general_download(path, filename)
 
 def toValid_act(filepath, yearmonth):
     logger.info("==========>" + sys._getframe().f_code.co_name)
@@ -395,7 +406,7 @@ def toValid_act(filepath, yearmonth):
         ["渠道类型", "省份", "营业所", "LKA系统名称", "系统门店分级", "月份", "门店数", "档期开始日期", "档期结束日期", "导入单号", "PN号", "方案名称", "是否到店",
          "是否已拆门店",
          "变价开始日期", "变价结束日期", "翻牌开始日期", "翻牌结束日期", "费用类型", "促销目的", "活动状态", "投放系统", "投放门店代码", "投放门店名称", "促销产品条码", "产品代码",
-         "促销产品名称", "促销产品单价（含税）", "产品配额", "备注"]]
+         "促销产品名称", "促销产品单价（含税）", "产品配额", "备注", "陈列门店数"]]
 
     # 选择执行的活动
     input_sheet = input_sheet.query("活动状态=='是'")
@@ -410,7 +421,7 @@ def toValid_act(filepath, yearmonth):
         ["渠道类型", "省份", "营业所", "LKA系统名称", "系统门店分级", "月份", "门店数", "档期开始日期", "档期结束日期", "导入单号", "PN号", "方案名称", "是否到店",
          "是否已拆门店",
          "变价开始日期", "变价结束日期", "翻牌开始日期", "翻牌结束日期", "费用类型", "促销目的", "活动状态", "投放系统", "投放门店代码", "投放门店名称", "促销产品条码", "产品代码",
-         "促销产品名称", "促销产品单价（含税）", "产品配额", "备注"]]
+         "促销产品名称", "促销产品单价（含税）", "产品配额", "备注", "陈列门店数"]]
 
     MA = input_sheet.query("渠道类型 in ['MA','LKA'] and 门店数==1")
 
@@ -422,16 +433,44 @@ def toValid_act(filepath, yearmonth):
         ['序号']].count().reset_index()
     cnt.rename(columns={'序号': '行数'}, inplace=True)
 
+    # 陈列门店数 校验
+    cnt2 = tp_month_plan_children[tp_month_plan_children['是否陈列'] == '是'].groupby(
+        ["省区", "营业所", "系统名称", "系统门店分级", "月份", "档期开始日期", "档期结束日期", "产品代码"])[['序号']].count().reset_index()
+    cnt2.rename(columns={'序号': '明细陈列门店数'}, inplace=True)
+
     abnorml_data = pd.merge(LKA, cnt,
                             left_on=["省份", "营业所", "LKA系统名称", "系统门店分级", "月份", "档期开始日期", "档期结束日期", "产品代码"],
                             right_on=["省区", "营业所", "系统名称", "系统门店分级", "月份", "档期开始日期", "档期结束日期", "产品代码"],
                             how='left'
                             )
-    abnorml_data = abnorml_data.query("门店数!=行数")
 
+    # 陈列门店数 校验
+    abnorml_data = pd.merge(abnorml_data, cnt2,
+                            left_on=["省份", "营业所", "LKA系统名称", "系统门店分级", "月份", "档期开始日期", "档期结束日期", "产品代码"],
+                            right_on=["省区", "营业所", "系统名称", "系统门店分级", "月份", "档期开始日期", "档期结束日期", "产品代码"],
+                            how='left'
+                            )
+    # 陈列门店数 校验
+    abnorml_data['明细陈列门店数'].fillna(0, inplace=True)
+    abnorml_data['明细陈列门店数'] = abnorml_data['明细陈列门店数'].astype(int)
+    abnorml_data['陈列门店数'] = abnorml_data['陈列门店数'].apply(lambda x: 0 if x == '' else x)
+    abnorml_data['陈列门店数'] = abnorml_data['陈列门店数'].astype(int)
+
+    # abnorml_data = abnorml_data.query("门店数!=行数")
+    # 陈列门店数 校验
+    abnorml_data = abnorml_data.query("门店数!=行数 or 陈列门店数!=明细陈列门店数")
+    abnorml_data.drop(['省区_x', '系统名称_x', '省区_y', '系统名称_y'], axis=1, inplace=True)
+
+    # 陈列门店数 校验, 检验数据放最后
+    abnorml_data_x = abnorml_data[['门店数', '行数', '陈列门店数', '明细陈列门店数']]
+    abnorml_data.drop(['门店数', '行数', '陈列门店数', '明细陈列门店数'], axis=1, inplace=True)
+    abnorml_data = pd.concat([abnorml_data, abnorml_data_x], axis=1)
+    abnorml_data.rename(columns={'行数': '明细门店数'}, inplace=True)
+
+    # 根据LKA是否陈列添加备注筛选
     LKA2 = pd.merge(LKA,
                     tp_month_plan_children[
-                        ["省区", "营业所", "系统名称", "系统门店分级", "月份", "档期开始日期", "档期结束日期", "产品代码", "序号", "玄讯代码", "玄讯门店名称"]],
+                        ["省区", "营业所", "系统名称", "系统门店分级", "月份", "档期开始日期", "档期结束日期", "产品代码", "序号", "玄讯代码", "玄讯门店名称","是否陈列"]],
                     left_on=["省份", "营业所", "LKA系统名称", "系统门店分级", "月份", "档期开始日期", "档期结束日期", "产品代码"],
                     right_on=["省区", "营业所", "系统名称", "系统门店分级", "月份", "档期开始日期", "档期结束日期", "产品代码"],
                     how='left')
@@ -439,6 +478,9 @@ def toValid_act(filepath, yearmonth):
     LKA2.drop(['投放门店代码', '投放门店名称'], axis=1, inplace=True)
 
     LKA2['导入单号'] = LKA2['导入单号'] + "-" + LKA2['序号']
+
+    # 根据LKA是否陈列添加备注筛选
+    LKA2.loc[LKA2['是否陈列'] != "是", "备注"] = ""
 
     LKA2 = LKA2[
         ["渠道类型", "省份", "营业所", "LKA系统名称", "系统门店分级", "月份", "门店数", "档期开始日期", "档期结束日期", "导入单号", "PN号", "方案名称", "是否到店",
@@ -450,7 +492,8 @@ def toValid_act(filepath, yearmonth):
 
     MA_LKA = pd.concat([MA, LKA2], axis=0)
 
-    MA_LKA2 = MA_LKA.drop(["渠道类型", "省份", "LKA系统名称", "系统门店分级", "月份", "门店数", "档期开始日期", "档期结束日期"], axis=1)
+    # 渠道类型 不删除
+    MA_LKA2 = MA_LKA.drop(["省份", "LKA系统名称", "系统门店分级", "月份", "门店数", "档期开始日期", "档期结束日期"], axis=1)
 
     MA_LKA2.loc[:, '活动状态'] = '启用'
 
