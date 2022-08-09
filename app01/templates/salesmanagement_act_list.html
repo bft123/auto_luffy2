@@ -115,9 +115,40 @@
         var cur_month = month_list[3]
 
         $(function(){
-            $('#ip01').val(cur_month)
-            $('#ip02').val(cur_month)
+            console.log(cur_month)
+            {#console.log({{ yearmonth }})#}
+            {#yearmonth = {{ yearmonth }}#}
+            {#$('#ip01').val(cur_month)#}
+            {#$('#ip02').val(cur_month)#}
 
+            {% if yearmonth %}
+                $('#ip01').val({{ yearmonth }})
+                $('#ip02').val({{ yearmonth }})
+                $.each(month_list,function(k,v){
+                    {#console.log(k+':'+v);#}
+                    if (v=={{ yearmonth }}){
+                        var $op = "<option value ='"+v+"' selected>"+v+"</option>";
+                    }else{
+                        var $op = "<option value ='"+v+"'>"+v+"</option>";
+                    }
+                    $("#sel01").append($op);
+                })
+            {% else %}
+                $('#ip01').val(cur_month)
+                $('#ip02').val(cur_month)
+                $.each(month_list,function(k,v){
+                    {#console.log(k+':'+v);#}
+                    if (v==cur_month){
+                        var $op = "<option value ='"+v+"' selected>"+v+"</option>";
+                    }else{
+                        var $op = "<option value ='"+v+"'>"+v+"</option>";
+                    }
+                    $("#sel01").append($op);
+                })
+            {% endif %}
+
+
+            /*
             $.each(month_list,function(k,v){
                 {#console.log(k+':'+v);#}
                 if (v==cur_month){
@@ -127,10 +158,12 @@
                 }
                 $("#sel01").append($op);
             })
+            */
 
             $('#sel01').change(function (){
                 $('#ip01').val(this.value)
                 $('#ip02').val(this.value)
+                window.location.href = "/salesmanagement/act/list/?yearmonth="+this.value;
             })
         })
     </script>

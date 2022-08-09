@@ -11,6 +11,7 @@ import warnings
 warnings.filterwarnings("ignore")
 import logging
 import sys
+import time
 
 # 生成一个名为collect的logger实例
 logger = logging.getLogger(__name__)
@@ -19,17 +20,23 @@ logger = logging.getLogger(__name__)
 def act_list(req):
     logger.info("==========>" + sys._getframe().f_code.co_name)
     if req.method == 'GET':
+        yearmonth = req.GET.get('yearmonth')
+        if not yearmonth:
+            yearmonth = time.strftime("%Y%m", time.localtime())
         query_set = filterAccountData(req)
-        return render(req, 'salesmanagement_act_list.html', {'query_set': query_set})
+        return render(req, 'salesmanagement_act_list.html', {'query_set': query_set, 'yearmonth': yearmonth})
 
 
 def filterAccountData(req):
     logger.info("==========>" + sys._getframe().f_code.co_name)
+    yearmonth = req.GET.get('yearmonth')
+    if not yearmonth:
+        yearmonth = time.strftime("%Y%m", time.localtime())
     username = req.session['info']['username']
     if username not in ['bft', 'jhzheng@hwccl']:
-        query_set = models.SalesManagementACT.objects.filter(upload_person=username)
+        query_set = models.SalesManagementACT.objects.filter(upload_person=username,yearmonth=yearmonth)
     else:
-        query_set = models.SalesManagementACT.objects.all()
+        query_set = models.SalesManagementACT.objects.filter(yearmonth=yearmonth)
     return query_set
 
 
