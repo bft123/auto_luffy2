@@ -349,10 +349,13 @@ def toValid_act(filepath, yearmonth):
             group['序号'] = range(1, len(group) + 1)
             return group
 
-        tp_month_plan_children = tp_month_plan_children.groupby(
-            ["省区", "营业所", "系统名称", "系统门店分级", "月份", "产品代码", "档期开始日期", "档期结束日期"]).apply(
-            add_index
-        )
+        if len(tp_month_plan_children) == 0:
+            tp_month_plan_children['序号'] = 0
+        else:
+            tp_month_plan_children = tp_month_plan_children.groupby(
+                ["省区", "营业所", "系统名称", "系统门店分级", "月份", "产品代码", "档期开始日期", "档期结束日期"]).apply(
+                add_index
+            )
 
         tp_month_plan_children = tp_month_plan_children[
             ["序号", "省区", "营业所", "系统名称", "系统门店分级", "月份", "玄讯代码", "玄讯门店名称", "产品代码", "促销活动单品", "档期开始日期", "档期结束日期", "负责业务员",
@@ -382,6 +385,8 @@ def toValid_act(filepath, yearmonth):
     # 读入门店区域信息
     shop_info = pd.read_csv(r'media/sm_act/shops/门店区域信息.csv', dtype={'门店代码': str})
     shop_info['门店信息'] = shop_info['门店代码'] + ";" + shop_info['门店名称']
+    # 防止后面门店匹配报错
+    shop_info['省份'].fillna('全国', inplace=True)
     logger.info('门店区域信息读取完成')
 
     # # 玄讯导入表生成
@@ -435,6 +440,43 @@ def toValid_act(filepath, yearmonth):
     MA['导入单号'] = MA['导入单号'].apply(lambda x: x + "-0000")
 
     LKA = input_sheet.query("渠道类型 == 'LKA' and 门店数!=1")
+
+    # 无明细数据且主表门店数全为1
+    if len(LKA) == 0:
+        MA_LKA = MA
+        abnorml_data = pd.DataFrame()
+        MA_LKA2 = MA_LKA.drop(["省份", "LKA系统名称", "系统门店分级", "月份", "门店数", "档期开始日期", "档期结束日期"], axis=1)
+        MA_LKA2.loc[:, '活动状态'] = '启用'
+        MA_LKA2['投放门店代码'] = MA_LKA2['投放门店代码'].astype(str)
+
+        # 根据 门店代码 门店名称 来判断 门店信息是否正确
+        MA_LKA3 = pd.merge(MA_LKA2, shop_info[['门店代码', '门店名称', '省份']], left_on=['投放门店代码', '投放门店名称'],
+                           right_on=['门店代码', '门店名称'], how='left')
+        MA_LKA3 = pd.merge(MA_LKA3, shop_info[['门店代码', '门店信息']], left_on='投放门店代码', right_on='门店代码', how='left')
+        MA_LKA3.loc[MA_LKA3['省份'].notnull(), '省份'] = '1'
+        MA_LKA3.loc[MA_LKA3['省份'].isnull(), '省份'] = '0'
+
+        MA_LKA3.drop(['产品代码', '营业所', '门店代码_x', '门店名称', '门店代码_y'], axis=1, inplace=True)
+        MA_LKA3.rename(columns={'省份': '门店信息_x'}, inplace=True)
+        # 去掉 方案名称 多余的-, 由于 门店活动类型 或者 陈列规模 有一个可能为空
+        MA_LKA3['方案名称'] = MA_LKA3['方案名称'].apply(lambda s: s.rstrip('-'))
+        # 根据 促销产品条码 来判断 产品信息是否正确
+        MA_LKA3['产品信息_x'] = ''
+        MA_LKA3.loc[MA_LKA3['促销产品条码'].notnull(), '产品信息_x'] = '1'
+        MA_LKA3.loc[MA_LKA3['促销产品条码'].isnull(), '产品信息_x'] = '0'
+        # 档期是否异常 如果 门店信息_x 或 产品信息_x 有1个异常 则异常
+        MA_LKA3['档期是否异常'] = '1'
+        MA_LKA3.loc[(MA_LKA3["门店信息_x"] == '0') | (MA_LKA3["产品信息_x"] == '0'), '档期是否异常'] = '0'
+        abnormal_act = MA_LKA3.query("档期是否异常=='0'")
+        normal_act = MA_LKA3.query("档期是否异常!='0'")
+
+        logger.info(f'错误数据生成完成,档期异常{len(abnormal_act)}行,LKA门店数与明细行数不匹配{len(abnorml_data)}行')
+
+        error_rows = len(abnormal_act), len(abnorml_data)
+        input_file = abnormal_act, abnorml_data, normal_act, '1'
+
+        return error_rows, input_file
+
 
     cnt = tp_month_plan_children.groupby(["省区", "营业所", "系统名称", "系统门店分级", "月份", "档期开始日期", "档期结束日期", "产品代码"])[
         ['序号']].count().reset_index()
