@@ -32,8 +32,11 @@ def filterAccountData(req):
     yearmonth = req.GET.get('yearmonth')
     if not yearmonth:
         yearmonth = time.strftime("%Y%m", time.localtime())
+    # username = req.session['info']['username']
+    # if username not in ['bft', 'jhzheng@hwccl']:
     username = req.session['info']['username']
-    if username not in ['bft', 'jhzheng@hwccl']:
+    roles = req.session['info']['roles']
+    if '管理员' not in roles and '销管ACT管理员' not in roles:
         query_set = models.SalesManagementACT.objects.filter(upload_person=username,yearmonth=yearmonth)
     else:
         query_set = models.SalesManagementACT.objects.filter(yearmonth=yearmonth)

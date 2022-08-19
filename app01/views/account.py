@@ -13,10 +13,12 @@ def login(request):
     pwd = request.POST.get('password')
 
     user_object = models.UserInfo.objects.filter(name=user, password=pwd).first()
+    roles_all = user_object.roles.all()
+    roles_list = [role.title for role in roles_all]
     if not user_object:
         return render(request, 'login.html', {'error': '用户名或密码错误'})
 
-    request.session['info'] = {'id': user_object.id, 'username': user_object.name}
+    request.session['info'] = {'id': user_object.id, 'username': user_object.name, 'roles': ','.join(roles_list)}
     # 用户权限信息的初始化
     init_permission(user_object, request)
 

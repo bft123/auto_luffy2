@@ -20,7 +20,9 @@
                     {#                <a class="btn btn-default" href="#">#}
                     {#                    <i class="fa fa-plus-square" aria-hidden="true"></i> 上传源数据#}
                     {#                </a>#}
-                    {% if request.session.info.username == 'bft' or request.session.info.username == 'jhzheng@hwccl' %}
+
+{#                    {% if request.session.info.username == 'bft' or request.session.info.username == 'jhzheng@hwccl' %}#}
+                    {% if '管理员' in  "{{ request.session.info.roles  }}" or '销管ACT管理员' in  "{{ request.session.info.roles  }}" %}
                         <div>
                             <span style="display: inline-block">上传档期门店区域信息</span>
                             <input style="display: inline-block" type="file" name="sm_act_shops">

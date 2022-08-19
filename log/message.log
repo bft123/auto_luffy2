@@ -1952,3 +1952,161 @@ AttributeError: This QueryDict instance is immutable
 日志级别：INFO,生成时间： 2022-08-15 13:56:40,121 ,模块：salesmanagementAct ,进程：7308,线程：12928 , 消息：错误数据生成完成,档期异常0行,LKA门店数与明细行数不匹配3行
 日志级别：INFO,生成时间： 2022-08-15 13:56:40,143 ,模块：salesmanagementAct ,进程：7308,线程：12928 , 消息：有错直接下载
 日志级别：INFO,生成时间： 2022-08-15 13:56:40,143 ,模块：salesmanagementAct ,进程：7308,线程：12928 , 消息：==========>del_file
+日志级别：INFO,生成时间： 2022-08-19 15:36:19,720 ,模块：autoreload ,进程：3004,线程：27904 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-08-19 15:36:19,974 ,模块：utils ,进程：3004,线程：30388 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-08-19 15:36:32,075 ,模块：autoreload ,进程：28116,线程：30956 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-08-19 15:36:32,448 ,模块：utils ,进程：28116,线程：30956 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-08-19 15:36:34,612 ,模块：rbac ,进程：28116,线程：19380 , 消息：bft 正在访问：/
+日志级别：INFO,生成时间： 2022-08-19 15:36:34,791 ,模块：rbac ,进程：28116,线程：19380 , 消息：bft 正在访问：/favicon.ico
+日志级别：INFO,生成时间： 2022-08-19 15:36:37,117 ,模块：rbac ,进程：28116,线程：19380 , 消息：bft 正在访问：/login/
+日志级别：INFO,生成时间： 2022-08-19 15:36:41,143 ,模块：rbac ,进程：28116,线程：6220 , 消息：bft 正在访问：/login/
+日志级别：INFO,生成时间： 2022-08-19 15:36:42,709 ,模块：rbac ,进程：28116,线程：6220 , 消息：bft 正在访问：/favicon.ico
+日志级别：INFO,生成时间： 2022-08-19 15:36:48,634 ,模块：rbac ,进程：28116,线程：6220 , 消息：bft 正在访问：/login/
+日志级别：INFO,生成时间： 2022-08-19 15:36:48,759 ,模块：rbac ,进程：28116,线程：6220 , 消息：bft 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 15:37:21,291 ,模块：rbac ,进程：28116,线程：6220 , 消息：bft 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 15:37:21,293 ,模块：salesmanagementAct ,进程：28116,线程：6220 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 15:37:21,293 ,模块：salesmanagementAct ,进程：28116,线程：6220 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 15:37:44,724 ,模块：rbac ,进程：28116,线程：6220 , 消息：bft 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 15:42:06,697 ,模块：rbac ,进程：28116,线程：6220 , 消息：bft 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 15:42:43,805 ,模块：autoreload ,进程：28116,线程：30956 , 消息：D:\notebook\django_\auto_luffy2\app01\views\account.py changed, reloading.
+日志级别：INFO,生成时间： 2022-08-19 15:42:46,353 ,模块：autoreload ,进程：10848,线程：11908 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-08-19 15:42:46,774 ,模块：utils ,进程：10848,线程：11908 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-08-19 15:42:47,795 ,模块：rbac ,进程：10848,线程：28744 , 消息：bft 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 15:49:28,519 ,模块：autoreload ,进程：30648,线程：16060 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-08-19 15:49:28,880 ,模块：utils ,进程：30648,线程：16060 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-08-19 15:51:25,511 ,模块：autoreload ,进程：29196,线程：37204 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-08-19 15:51:25,593 ,模块：utils ,进程：29196,线程：22888 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-08-19 15:51:33,222 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 15:51:40,239 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/rbac/distribute/permissions/
+日志级别：INFO,生成时间： 2022-08-19 15:51:42,400 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/rbac/distribute/permissions/
+日志级别：INFO,生成时间： 2022-08-19 15:51:45,683 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/rbac/distribute/permissions/
+日志级别：INFO,生成时间： 2022-08-19 15:51:47,953 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 15:51:50,397 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 15:51:56,845 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/rbac/distribute/permissions/
+日志级别：INFO,生成时间： 2022-08-19 15:51:58,533 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/rbac/distribute/permissions/
+日志级别：INFO,生成时间： 2022-08-19 15:52:01,830 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/rbac/distribute/permissions/
+日志级别：INFO,生成时间： 2022-08-19 15:52:05,316 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 15:52:08,597 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 15:52:10,485 ,模块：rbac ,进程：29196,线程：31740 , 消息：bft 正在访问：/rbac/distribute/permissions/
+日志级别：INFO,生成时间： 2022-08-19 15:58:48,142 ,模块：autoreload ,进程：24332,线程：36024 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-08-19 15:58:48,220 ,模块：utils ,进程：24332,线程：37864 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-08-19 15:58:52,713 ,模块：rbac ,进程：24332,线程：11064 , 消息：bft 正在访问：/rbac/distribute/permissions/
+日志级别：INFO,生成时间： 2022-08-19 15:58:56,302 ,模块：rbac ,进程：24332,线程：31784 , 消息：bft 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 15:58:59,310 ,模块：rbac ,进程：24332,线程：31784 , 消息：bft 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 15:59:00,803 ,模块：rbac ,进程：24332,线程：31784 , 消息：bft 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 15:59:00,805 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 15:59:00,806 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 15:59:10,482 ,模块：rbac ,进程：24332,线程：31784 , 消息：bft 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 15:59:17,203 ,模块：rbac ,进程：24332,线程：31784 , 消息：actTest 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 15:59:18,739 ,模块：rbac ,进程：24332,线程：31784 , 消息：actTest 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 15:59:18,740 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 15:59:18,740 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 15:59:20,789 ,模块：rbac ,进程：24332,线程：31784 , 消息：actTest 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 15:59:24,286 ,模块：rbac ,进程：24332,线程：31784 , 消息：jhzheng@hwccl 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 15:59:25,790 ,模块：rbac ,进程：24332,线程：31784 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 15:59:25,790 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 15:59:25,790 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 15:59:51,784 ,模块：rbac ,进程：24332,线程：31784 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/upload/
+日志级别：INFO,生成时间： 2022-08-19 15:59:51,787 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：==========>act_upload
+日志级别：INFO,生成时间： 2022-08-19 15:59:51,787 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：==========>saveFile
+日志级别：INFO,生成时间： 2022-08-19 15:59:51,788 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：==========>toValid_act
+日志级别：INFO,生成时间： 2022-08-19 15:59:51,789 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：media\sm_act/data\玄讯导入测试_正确1.xlsx
+日志级别：INFO,生成时间： 2022-08-19 15:59:52,782 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：Index(['序列（序列不能调整）', '活动执行（是/否）每周确认，取消档期填否', '大区', '省份', '营业所', '渠道类型',
+       '系统门店分级', 'LKA系统名称', '门店数', '门店玄讯代码（非前系统10家以内提供，超10家门店添加明细附件）', '门店名称',
+       '大类', '明细类', '产品代码', '产品名称', '箱规', '月份', '促销类型', '规划单门店配额（件）',
+       '规划门店总数量（件）', '规划门店总数量（瓶or袋）', '档期开始日期', '档期结束日期', '活动促销售价（含税瓶/袋）',
+       '陈列门店数', '门店活动类型', '陈列规模', '公司承担海报费'],
+      dtype='object')
+日志级别：INFO,生成时间： 2022-08-19 15:59:52,787 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：TP促销月度规划明细读取完成
+日志级别：INFO,生成时间： 2022-08-19 15:59:53,163 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：TP促销月度规划明细读取完成
+日志级别：INFO,生成时间： 2022-08-19 15:59:53,916 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：产品信息读取完成
+日志级别：INFO,生成时间： 2022-08-19 15:59:54,659 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：门店区域信息读取完成
+日志级别：INFO,生成时间： 2022-08-19 15:59:55,150 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：玄讯导入表生成完成
+日志级别：INFO,生成时间： 2022-08-19 15:59:55,162 ,模块：salesmanagementAct ,进程：24332,线程：31784 , 消息：错误数据生成完成,档期异常0行,LKA门店数与明细行数不匹配0行
+日志级别：INFO,生成时间： 2022-08-19 15:59:58,383 ,模块：rbac ,进程：24332,线程：23984 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 15:59:58,384 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 15:59:58,384 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:00:00,803 ,模块：rbac ,进程：24332,线程：23984 , 消息：jhzheng@hwccl 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 16:00:04,591 ,模块：rbac ,进程：24332,线程：23984 , 消息：bft 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 16:00:06,116 ,模块：rbac ,进程：24332,线程：23984 , 消息：bft 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:00:06,116 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:00:06,116 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:00:08,962 ,模块：rbac ,进程：24332,线程：23984 , 消息：bft 正在访问：/rbac/menu/list/
+日志级别：INFO,生成时间： 2022-08-19 16:00:10,357 ,模块：rbac ,进程：24332,线程：23984 , 消息：bft 正在访问：/rbac/role/list/
+日志级别：INFO,生成时间： 2022-08-19 16:00:12,301 ,模块：rbac ,进程：24332,线程：23984 , 消息：bft 正在访问：/rbac/distribute/permissions/
+日志级别：INFO,生成时间： 2022-08-19 16:00:14,610 ,模块：rbac ,进程：24332,线程：23984 , 消息：bft 正在访问：/user/list/
+日志级别：INFO,生成时间： 2022-08-19 16:00:15,626 ,模块：rbac ,进程：24332,线程：23984 , 消息：bft 正在访问：/user/add/
+日志级别：INFO,生成时间： 2022-08-19 16:00:34,556 ,模块：rbac ,进程：24332,线程：23984 , 消息：bft 正在访问：/user/add/
+日志级别：INFO,生成时间： 2022-08-19 16:00:34,572 ,模块：rbac ,进程：24332,线程：23984 , 消息：bft 正在访问：/user/list/
+日志级别：INFO,生成时间： 2022-08-19 16:00:36,733 ,模块：rbac ,进程：24332,线程：23984 , 消息：bft 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 16:00:39,019 ,模块：rbac ,进程：24332,线程：23984 , 消息：actTest 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 16:00:40,405 ,模块：rbac ,进程：24332,线程：23984 , 消息：actTest 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:00:40,405 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:00:40,405 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:00:58,256 ,模块：rbac ,进程：24332,线程：23984 , 消息：actTest 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:00:58,256 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:00:58,256 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:01:00,219 ,模块：rbac ,进程：24332,线程：23984 , 消息：actTest 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:01:00,219 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:01:00,219 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:01:02,510 ,模块：rbac ,进程：24332,线程：23984 , 消息：actTest 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:01:02,510 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:01:02,510 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:01:04,022 ,模块：rbac ,进程：24332,线程：23984 , 消息：actTest 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:01:04,023 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:01:04,023 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:01:05,366 ,模块：rbac ,进程：24332,线程：23984 , 消息：actTest 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:01:05,366 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:01:05,366 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:01:06,742 ,模块：rbac ,进程：24332,线程：23984 , 消息：actTest 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:01:06,742 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:01:06,742 ,模块：salesmanagementAct ,进程：24332,线程：23984 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:03:22,940 ,模块：autoreload ,进程：24332,线程：36024 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagementAct.py changed, reloading.
+日志级别：INFO,生成时间： 2022-08-19 16:03:24,486 ,模块：autoreload ,进程：2788,线程：35532 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-08-19 16:03:24,653 ,模块：utils ,进程：2788,线程：35532 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-08-19 16:03:52,496 ,模块：autoreload ,进程：2788,线程：35532 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagementAct.py changed, reloading.
+日志级别：INFO,生成时间： 2022-08-19 16:03:53,671 ,模块：autoreload ,进程：11604,线程：24000 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-08-19 16:03:53,759 ,模块：utils ,进程：11604,线程：24000 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-08-19 16:04:34,085 ,模块：autoreload ,进程：11604,线程：24000 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagementAct.py changed, reloading.
+日志级别：INFO,生成时间： 2022-08-19 16:04:35,360 ,模块：autoreload ,进程：15280,线程：27400 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-08-19 16:04:35,442 ,模块：utils ,进程：15280,线程：12696 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-08-19 16:04:45,724 ,模块：autoreload ,进程：15280,线程：27400 , 消息：D:\notebook\django_\auto_luffy2\app01\views\salesmanagementAct.py changed, reloading.
+日志级别：INFO,生成时间： 2022-08-19 16:04:46,814 ,模块：autoreload ,进程：31328,线程：14832 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-08-19 16:04:46,895 ,模块：utils ,进程：31328,线程：14832 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-08-19 16:04:56,123 ,模块：rbac ,进程：31328,线程：29416 , 消息：actTest 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:04:56,125 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:04:56,125 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:04:58,117 ,模块：rbac ,进程：31328,线程：29416 , 消息：actTest 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 16:05:02,135 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 16:05:06,250 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:05:06,252 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:05:06,252 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:05:20,571 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 16:05:24,864 ,模块：rbac ,进程：31328,线程：29416 , 消息：actTest 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 16:05:26,211 ,模块：rbac ,进程：31328,线程：29416 , 消息：actTest 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:05:26,211 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:05:26,211 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:05:39,555 ,模块：rbac ,进程：31328,线程：29416 , 消息：actTest 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 16:05:42,963 ,模块：rbac ,进程：31328,线程：29416 , 消息：jhzheng@hwccl 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 16:05:44,375 ,模块：rbac ,进程：31328,线程：29416 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:05:44,375 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:05:44,375 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:05:48,311 ,模块：rbac ,进程：31328,线程：29416 , 消息：jhzheng@hwccl 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 16:05:55,656 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 16:05:58,071 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/user/list/
+日志级别：INFO,生成时间： 2022-08-19 16:06:14,680 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/user/edit/12/
+日志级别：INFO,生成时间： 2022-08-19 16:06:25,786 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/user/edit/12/
+日志级别：INFO,生成时间： 2022-08-19 16:06:25,819 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/user/list/
+日志级别：INFO,生成时间： 2022-08-19 16:06:26,919 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/user/reset/password/12/
+日志级别：INFO,生成时间： 2022-08-19 16:06:29,894 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/user/reset/password/12/
+日志级别：INFO,生成时间： 2022-08-19 16:06:29,905 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/user/list/
+日志级别：INFO,生成时间： 2022-08-19 16:06:32,143 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 16:06:34,124 ,模块：rbac ,进程：31328,线程：29416 , 消息：act_admin_Test 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 16:06:35,639 ,模块：rbac ,进程：31328,线程：29416 , 消息：act_admin_Test 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:06:35,639 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:06:35,639 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-19 16:06:47,698 ,模块：rbac ,进程：31328,线程：29416 , 消息：act_admin_Test 正在访问：/logout/
+日志级别：INFO,生成时间： 2022-08-19 16:06:50,302 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/index/
+日志级别：INFO,生成时间： 2022-08-19 16:06:51,888 ,模块：rbac ,进程：31328,线程：29416 , 消息：bft 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-19 16:06:51,890 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-19 16:06:51,890 ,模块：salesmanagementAct ,进程：31328,线程：29416 , 消息：==========>filterAccountData
