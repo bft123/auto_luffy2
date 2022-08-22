@@ -237,11 +237,13 @@ def act_del(req, pk):
     ''' 删除上传文件 '''
     smModels = models.SalesManagementACT.objects.filter(id=pk)
     path = smModels.first().filepath
+    filename = smModels.first().filename
+    yearmonth = filename.split('_')[0]
     if os.path.exists(path):  # 如果文件存在
         # 删除文件，可使用以下两种方法。
         os.remove(path)
     smModels.delete()
-    return redirect('/salesmanagement/act/list/')
+    return redirect(f'/salesmanagement/act/list/?yearmonth={yearmonth}')
 
 def act_download_one(req, pk):
     logger.info("==========>" + sys._getframe().f_code.co_name)

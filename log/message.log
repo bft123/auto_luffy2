@@ -2162,3 +2162,50 @@ AttributeError: This QueryDict instance is immutable
 日志级别：INFO,生成时间： 2022-08-22 10:37:51,477 ,模块：rbac ,进程：26888,线程：29816 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
 日志级别：INFO,生成时间： 2022-08-22 10:37:51,478 ,模块：salesmanagementAct ,进程：26888,线程：29816 , 消息：==========>act_list
 日志级别：INFO,生成时间： 2022-08-22 10:37:51,478 ,模块：salesmanagementAct ,进程：26888,线程：29816 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:04,543 ,模块：autoreload ,进程：7296,线程：10648 , 消息：Watching for file changes with StatReloader
+日志级别：INFO,生成时间： 2022-08-22 11:05:04,633 ,模块：utils ,进程：7296,线程：10648 , 消息：NumExpr defaulting to 8 threads.
+日志级别：INFO,生成时间： 2022-08-22 11:05:08,554 ,模块：rbac ,进程：7296,线程：28304 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:08,555 ,模块：salesmanagementAct ,进程：7296,线程：28304 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:08,555 ,模块：salesmanagementAct ,进程：7296,线程：28304 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:13,143 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:13,144 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:13,144 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:16,111 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:16,112 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:16,112 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:23,405 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/del/38/
+日志级别：INFO,生成时间： 2022-08-22 11:05:23,405 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_del
+日志级别：INFO,生成时间： 2022-08-22 11:05:23,446 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:23,446 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:23,446 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:26,287 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:26,288 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:26,288 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:28,272 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:28,273 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:28,273 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:30,462 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:30,462 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:30,462 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:32,528 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:32,528 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:32,528 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:44,827 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/del/48/
+日志级别：INFO,生成时间： 2022-08-22 11:05:44,827 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_del
+日志级别：INFO,生成时间： 2022-08-22 11:05:44,841 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:44,841 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:44,841 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:47,919 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/del/56/
+日志级别：INFO,生成时间： 2022-08-22 11:05:47,920 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_del
+日志级别：INFO,生成时间： 2022-08-22 11:05:47,942 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:47,943 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:47,943 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:51,670 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:51,672 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:51,672 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:53,832 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:53,832 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:53,832 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
+日志级别：INFO,生成时间： 2022-08-22 11:05:55,466 ,模块：rbac ,进程：7296,线程：26032 , 消息：jhzheng@hwccl 正在访问：/salesmanagement/act/list/
+日志级别：INFO,生成时间： 2022-08-22 11:05:55,466 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>act_list
+日志级别：INFO,生成时间： 2022-08-22 11:05:55,466 ,模块：salesmanagementAct ,进程：7296,线程：26032 , 消息：==========>filterAccountData
