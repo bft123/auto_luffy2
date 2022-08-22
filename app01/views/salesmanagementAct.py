@@ -572,6 +572,14 @@ def toValid_act(filepath, yearmonth):
     MA_LKA3['档期是否异常'] = '1'
     MA_LKA3.loc[(MA_LKA3["门店信息_x"] == '0') | (MA_LKA3["产品信息_x"] == '0'), '档期是否异常'] = '0'
 
+    # 加主表的大类和营业所字段
+    def get_pk(x):
+        return int(x.split('-')[2])
+
+    MA_LKA3['序号'] = MA_LKA3['导入单号'].apply(get_pk)
+    MA_LKA3 = pd.merge(MA_LKA3, tp_month_plan[['序号', '营业所', '大类']], on=['序号'], how='left')
+    MA_LKA3.drop('序号', axis=1, inplace=True)
+
     # MA_LKA3.to_excel('玄讯导入表2.xlsx', index=False)
     logger.info('玄讯导入表生成完成')
 
