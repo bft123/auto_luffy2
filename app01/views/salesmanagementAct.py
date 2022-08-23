@@ -159,7 +159,18 @@ def act_upload(req):
             })
 
             filepath = f'media/sm_act/data/{input_filename}'
-            input_sheet = datas_out[2]
+            # input_sheet = datas_out[2]
+
+            # 加主表的大类和营业所字段
+            def get_pk(x):
+                return int(x.split('-')[2])
+            MA_LKA3 = datas_out[2][0]
+            tp_month_plan = datas_out[2][1]
+            MA_LKA3['序号'] = MA_LKA3['导入单号'].apply(get_pk)
+            MA_LKA3 = pd.merge(MA_LKA3, tp_month_plan[['序号', '营业所', '大类']], on=['序号'], how='left')
+            MA_LKA3.drop('序号', axis=1, inplace=True)
+            input_sheet = MA_LKA3.query("档期是否异常!='0'")
+
             input_sheet.drop(['陈列门店数', '门店信息_x', '门店信息', '产品信息_x', '档期是否异常'], axis=1, inplace=True)
             input_sheet.to_excel(filepath, index=False)
 
@@ -575,12 +586,12 @@ def toValid_act(filepath, yearmonth):
     MA_LKA3.loc[(MA_LKA3["门店信息_x"] == '0') | (MA_LKA3["产品信息_x"] == '0'), '档期是否异常'] = '0'
 
     # 加主表的大类和营业所字段
-    def get_pk(x):
-        return int(x.split('-')[2])
+    # def get_pk(x):
+    #     return int(x.split('-')[2])
 
-    MA_LKA3['序号'] = MA_LKA3['导入单号'].apply(get_pk)
-    MA_LKA3 = pd.merge(MA_LKA3, tp_month_plan[['序号', '营业所', '大类']], on=['序号'], how='left')
-    MA_LKA3.drop('序号', axis=1, inplace=True)
+    # MA_LKA3['序号'] = MA_LKA3['导入单号'].apply(get_pk)
+    # MA_LKA3 = pd.merge(MA_LKA3, tp_month_plan[['序号', '营业所', '大类']], on=['序号'], how='left')
+    # MA_LKA3.drop('序号', axis=1, inplace=True)
 
     # MA_LKA3.to_excel('玄讯导入表2.xlsx', index=False)
     logger.info('玄讯导入表生成完成')
@@ -595,7 +606,8 @@ def toValid_act(filepath, yearmonth):
     logger.info(f'错误数据生成完成,档期异常{len(abnormal_act)}行,LKA门店数与明细行数不匹配{len(abnorml_data)}行')
 
     error_rows = len(abnormal_act), len(abnorml_data)
-    input_file = abnormal_act, abnorml_data, normal_act, '1'
+    # input_file = abnormal_act, abnorml_data, normal_act, '1'
+    input_file = abnormal_act, abnorml_data, (MA_LKA3, tp_month_plan), '1'
 
     # logger.info(error_rows)
     # 导出数据
