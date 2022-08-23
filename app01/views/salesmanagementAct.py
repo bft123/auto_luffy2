@@ -459,6 +459,7 @@ def toValid_act(filepath, yearmonth):
 
     # 无明细数据且主表门店数全为1
     if len(LKA) == 0:
+        logger.info('无明细数据且主表门店数全为1')
         MA_LKA = MA
         abnorml_data = pd.DataFrame()
         MA_LKA2 = MA_LKA.drop(["省份", "LKA系统名称", "系统门店分级", "月份", "门店数", "档期开始日期", "档期结束日期"], axis=1)
@@ -484,12 +485,13 @@ def toValid_act(filepath, yearmonth):
         MA_LKA3['档期是否异常'] = '1'
         MA_LKA3.loc[(MA_LKA3["门店信息_x"] == '0') | (MA_LKA3["产品信息_x"] == '0'), '档期是否异常'] = '0'
         abnormal_act = MA_LKA3.query("档期是否异常=='0'")
-        normal_act = MA_LKA3.query("档期是否异常!='0'")
+        # normal_act = MA_LKA3.query("档期是否异常!='0'")
 
         logger.info(f'错误数据生成完成,档期异常{len(abnormal_act)}行,LKA门店数与明细行数不匹配{len(abnorml_data)}行')
 
         error_rows = len(abnormal_act), len(abnorml_data)
-        input_file = abnormal_act, abnorml_data, normal_act, '1'
+        # input_file = abnormal_act, abnorml_data, normal_act, '1'
+        input_file = abnormal_act, abnorml_data, (MA_LKA3, tp_month_plan), '1'
 
         return error_rows, input_file
 
