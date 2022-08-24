@@ -339,8 +339,11 @@ def toValid_act(filepath, yearmonth):
     tp_month_plan['档期结束日期_x'] = tp_month_plan['档期结束日期'].apply(
         lambda x: '1' if isinstance(x, datetime) else '0')
     tp_month_plan['活动执行_x'] = tp_month_plan['活动执行'].apply(lambda x: '1' if x in ['是', '否'] else '0')
+    tp_month_plan['门店数_x'] = tp_month_plan['门店数'].apply(lambda x: '1' if isinstance(x, int) and x>=1 else '0')
+    tp_month_plan['陈列门店数_x'] = tp_month_plan['陈列门店数'].apply(lambda x: '1' if isinstance(x, int) and x>=0 else '0')
     tp_month_plan['TP促销月度规划明细数据异常'] = tp_month_plan['渠道类型_x'] + tp_month_plan['系统门店分级_x'] + tp_month_plan['促销类型_x'] + \
-                                      tp_month_plan['档期开始日期_x'] + tp_month_plan['档期结束日期_x'] + tp_month_plan['活动执行_x']
+                                      tp_month_plan['档期开始日期_x'] + tp_month_plan['档期结束日期_x'] + tp_month_plan['活动执行_x'] + tp_month_plan['门店数_x'] + \
+                                      tp_month_plan['陈列门店数_x']
     tp_month_plan['TP促销月度规划明细数据异常'] = tp_month_plan['TP促销月度规划明细数据异常'].apply(lambda x: '1' if '0' not in x else '0')
 
     abnormal_act2 = []
@@ -348,7 +351,7 @@ def toValid_act(filepath, yearmonth):
     abnormal_data2 = tp_month_plan.query("TP促销月度规划明细数据异常=='0'")
 
     error_rows2 = len(abnormal_act2), len(abnormal_data2)
-    input_file2 = abnormal_act2, abnormal_data2, normal_act2, '0'
+    input_file2 = abnormal_act2, abnormal_data2, ('', normal_act2), '0'
 
     if len(abnormal_data2) > 0:
         return error_rows2, input_file2
