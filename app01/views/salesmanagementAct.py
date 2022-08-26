@@ -430,7 +430,7 @@ def toValid_act(filepath, yearmonth):
     tp_month_plan['促销产品名称'] = tp_month_plan['产品名称']
     tp_month_plan['促销产品单价（含税）'] = tp_month_plan['活动促销售价']
     tp_month_plan['产品配额'] = tp_month_plan['规划单门店配额']
-    tp_month_plan['备注'] = tp_month_plan['门店活动类型'] + tp_month_plan['陈列规模']
+    tp_month_plan['备注'] = tp_month_plan['门店活动类型'] + tp_month_plan['陈列规模'].astype(str)
     tp_month_plan['投放系统'] = ''
 
     input_sheet = tp_month_plan[
@@ -487,6 +487,11 @@ def toValid_act(filepath, yearmonth):
         # 档期是否异常 如果 门店信息_x 或 产品信息_x 有1个异常 则异常
         MA_LKA3['档期是否异常'] = '1'
         MA_LKA3.loc[(MA_LKA3["门店信息_x"] == '0') | (MA_LKA3["产品信息_x"] == '0'), '档期是否异常'] = '0'
+
+        # 修改方案名称
+        MA_LKA3['方案名称'] = MA_LKA3['方案名称'].apply(lambda x: x.split('-')[0]) + '-' + MA_LKA3['费用类型'] + '-' + MA_LKA3['备注']
+        MA_LKA3['方案名称'] = MA_LKA3['方案名称'].apply(lambda s: s.rstrip('-'))
+
         abnormal_act = MA_LKA3.query("档期是否异常=='0'")
         # normal_act = MA_LKA3.query("档期是否异常!='0'")
 
@@ -551,6 +556,8 @@ def toValid_act(filepath, yearmonth):
 
     # 根据LKA是否陈列添加备注筛选
     LKA2.loc[LKA2['是否陈列'] != "是", "备注"] = ""
+    # 修改方案名称
+    # LKA2['方案名称'] = LKA2['方案名称'].apply(lambda x : x.split('-')[0]) + '-' + LKA2['费用类型'] + '-' + LKA2['备注']
 
     LKA2 = LKA2[
         ["渠道类型", "省份", "营业所", "LKA系统名称", "系统门店分级", "月份", "门店数", "档期开始日期", "档期结束日期", "导入单号", "PN号", "方案名称", "是否到店",
@@ -589,6 +596,10 @@ def toValid_act(filepath, yearmonth):
 
     MA_LKA3['档期是否异常'] = '1'
     MA_LKA3.loc[(MA_LKA3["门店信息_x"] == '0') | (MA_LKA3["产品信息_x"] == '0'), '档期是否异常'] = '0'
+
+    # 修改方案名称
+    MA_LKA3['方案名称'] = MA_LKA3['方案名称'].apply(lambda x : x.split('-')[0]) + '-' + MA_LKA3['费用类型'] + '-' + MA_LKA3['备注']
+    MA_LKA3['方案名称'] = MA_LKA3['方案名称'].apply(lambda s: s.rstrip('-'))
 
     # 加主表的大类和营业所字段
     # def get_pk(x):
